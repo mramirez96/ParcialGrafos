@@ -16,6 +16,24 @@ public class Pruebas {
 		bfs.run(2);
 	}
 
+	@Test
+	public void bfsMica() {
+		System.out.println("BFS Mica");
+		GrafoNDNP g = new GrafoNDNP(9);
+		g.conectar(6, 7);
+		g.conectar(7, 8);
+		g.conectar(7, 4);
+		g.conectar(4, 3);
+		g.conectar(3, 0);
+		g.conectar(0, 1);
+		g.conectar(1, 2);
+		g.conectar(2, 3);
+		g.conectar(2, 5);
+		g.conectar(5, 4);
+		System.out.println(g);
+		Bfs2 bfs = new Bfs2(g);
+		bfs.run(4);
+	}
 	
 	@Test
 	public void dfsSimple() {
@@ -49,6 +67,25 @@ public class Pruebas {
 		g.conectar(6, 7, 3);
 		
 		Dijkstra d = new Dijkstra(g);
+		
+		d.run(0);
+	}
+	
+	@Test
+	public void dijkstraMica() {
+		System.out.println("Dijkstra Mica");
+		
+		GrafoPonderado g = new GrafoPonderado(5);
+		g.conectar(0, 1, 100);
+		g.conectar(0, 2, 30);
+		g.conectar(0, 3, 20);
+		
+		g.conectar(2, 1, 40);
+		g.conectar(2, 4, 5);
+		
+		g.conectar(4, 1, 30);
+		
+		Dijkstra2 d = new Dijkstra2(g);
 		
 		d.run(0);
 	}
