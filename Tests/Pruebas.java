@@ -89,4 +89,32 @@ public class Pruebas {
 		
 		d.run(0);
 	}
+	
+	@Test
+	public void kruskal() {
+		System.out.println("Kruskal");
+		
+		GrafoPonderado g = new GrafoPonderado(7);
+		g.conectar(0, 1, 2);
+		g.conectar(0, 3, 1);
+		
+		g.conectar(1, 5, 5);
+		
+		g.conectar(2, 3, 2);
+		g.conectar(2, 0, 4);
+		g.conectar(2, 5, 5);
+		
+		g.conectar(3, 1, 3);
+		g.conectar(3, 6, 4);
+		g.conectar(3, 4, 7);
+		
+		g.conectar(5, 6, 1);
+		g.conectar(5, 3, 8);
+		
+		g.conectar(6, 4, 6);
+		
+		Kruskal k = new Kruskal(g);
+		
+		k.run();
+	}
 }
